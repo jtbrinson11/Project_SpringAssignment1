@@ -1,13 +1,14 @@
 package org.SpringAssignment1;
 
-/**
- * Hello world!
- *
- */
-public class App 
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        AbstractApplicationContext context = new ClassPathXmlApplicationContext("SpringAssignment1.xml");
+        student stud = (student) context.getBean("student");
+        System.out.println(stud);
     }
 }
